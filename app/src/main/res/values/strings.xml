@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ChatBook</string>
+    <string name="attachment">attachment_button</string>
+    <string name="camera">camera_button</string>
+    <string name="send_button">send_button</string>
+    <string name="gautam_sharma">Gautam Sharma</string>
+    <string name="online">Online</string>
+</resources>
