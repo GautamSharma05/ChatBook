@@ -5,4 +5,7 @@
     <string name="send_button">send_button</string>
     <string name="gautam_sharma">Gautam Sharma</string>
     <string name="online">Online</string>
+    <string name="verify_your_phone_number">Verify your phone number</string>
+    <string name="chatbook_will_send_an_sms_message_to_verify_your_phone_number">ChatBook will send an SMS message to verify your phone number</string>
+    <string name="type_your_phone_number">type your phone number</string>
 </resources>

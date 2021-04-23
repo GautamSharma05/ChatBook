@@ -25,7 +25,7 @@
         android:layout_width="232dp"
         android:layout_height="23dp"
         android:layout_marginTop="20dp"
-        android:text="Verify your phone number"
+        android:text="@string/verify_your_phone_number"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -40,7 +40,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="ChatBook will send an SMS message to verify your phone number"
+        android:text="@string/chatbook_will_send_an_sms_message_to_verify_your_phone_number"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/phoneLbl"
@@ -68,14 +68,26 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/phoneBox"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_box_outline"
-                android:ems="10"
-                android:hint="type your phone number"
-                android:inputType="phone" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCode"
+                    android:layout_width="125dp"
+                    android:layout_height="35dp" />
+
+                <EditText
+                    android:id="@+id/phoneBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/text_box_outline"
+                    android:ems="10"
+                    android:hint="@string/type_your_phone_number"
+                    android:inputType="phone" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/continueButton"

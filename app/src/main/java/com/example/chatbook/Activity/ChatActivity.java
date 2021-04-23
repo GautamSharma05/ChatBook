@@ -236,7 +236,7 @@ public class ChatActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 database.getReference().child("presence").child(senderUid).setValue("typing...");
                 handler.removeCallbacksAndMessages(null);
-                handler.postDelayed(userStoppedTyping,2000);
+                handler.postDelayed(userStoppedTyping,1000);
             }
             Runnable userStoppedTyping = new Runnable() {
                 @Override

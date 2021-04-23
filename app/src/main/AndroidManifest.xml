@@ -3,8 +3,8 @@
     package="com.example.chatbook">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,44 +13,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatBook">
-        <activity android:name=".Activity.ChatActivity" android:theme="@style/Theme.ChatBook.NoActionBar" />
-        <activity android:name=".Activity.SetupProfileActivity" />
-        <activity android:name=".Activity.OTPActivity" />
-        <activity android:name=".Activity.PhoneNumberActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity.ChatActivity"
+            android:theme="@style/Theme.ChatBook.NoActionBar" />
+        <activity android:name=".Activity.SetupProfileActivity" />
+        <activity android:name=".Activity.OTPActivity" />
+        <activity android:name=".Activity.PhoneNumberActivity">
+
+        </activity>
         <activity android:name=".Activity.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more. -->
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_send" />
-        
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/green" />
-        <service android:name=".sendNotification.FirebaseService"
+
+        <service
+            android:name=".sendNotification.FirebaseService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_SERVICE"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_SERVICE" />
             </intent-filter>
         </service>
-        <service android:name=".sendNotification.FirebaseMessaging"
+        <service
+            android:name=".sendNotification.FirebaseMessaging"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>>
+        </service>
     </application>
 
 </manifest>

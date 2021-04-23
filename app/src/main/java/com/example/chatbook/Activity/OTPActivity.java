@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.hbb20.CountryCodePicker;
 import com.mukesh.OnOtpCompletionListener;
 
 import java.util.concurrent.TimeUnit;
@@ -43,10 +44,11 @@ public class OTPActivity extends AppCompatActivity {
         binding = ActivityOTPBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
-        binding.phoneLbl.setText("Verify " + phoneNumber);
+        String countryCodePicker = getIntent().getStringExtra("countryCodePicker");
+        binding.phoneLbl.setText("Verify "+countryCodePicker+phoneNumber);
 
         PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
-                .setPhoneNumber(phoneNumber)
+                .setPhoneNumber(countryCodePicker+phoneNumber)
                 .setTimeout(60L, TimeUnit.SECONDS)
                 .setActivity(OTPActivity.this)
                 .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

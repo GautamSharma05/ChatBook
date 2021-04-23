@@ -30,6 +30,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PhoneNumberActivity.this,OTPActivity.class);
+                intent.putExtra("countryCodePicker",binding.countryCode.getSelectedCountryCodeWithPlus());
                 intent.putExtra("phoneNumber",binding.phoneBox.getText().toString());
                 startActivity(intent);
             }
