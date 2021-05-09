@@ -55,8 +55,6 @@ public class ChatActivity extends AppCompatActivity {
      ActivityChatBinding binding;
      MessagesAdapter messagesAdapter;
      ArrayList<Message> messages;
-
-
      String senderUid;
     String receiverUid;
     String senderRoom,receiverRoom;
@@ -72,7 +70,6 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.toolbar);
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -236,7 +233,7 @@ public class ChatActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 database.getReference().child("presence").child(senderUid).setValue("typing...");
                 handler.removeCallbacksAndMessages(null);
-                handler.postDelayed(userStoppedTyping,2000);
+                handler.postDelayed(userStoppedTyping,1000);
             }
             Runnable userStoppedTyping = new Runnable() {
                 @Override

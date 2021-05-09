@@ -1,7 +1,7 @@
 package com.example.chatbook.Model;
 
 public class Message {
-  private String messageId;
+    private String messageId;
     private String message;
     private String senderId;
 

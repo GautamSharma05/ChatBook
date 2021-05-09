@@ -2,6 +2,7 @@ package com.example.chatbook.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -16,6 +17,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -279,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -300,6 +303,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void signOut() {
         FirebaseAuth.getInstance().signOut();
+        if(FirebaseAuth.getInstance().getCurrentUser() == null){
+            Toast.makeText(this, "SignOut Successfully", Toast.LENGTH_SHORT).show();
+
+        }
+        else{
+            Toast.makeText(this, "SignOut not Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
     private void onShareClicked() {
 

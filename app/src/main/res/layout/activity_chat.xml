@@ -64,10 +64,10 @@
                     android:textColor="@color/white"
                     android:visibility="gone" />
             </LinearLayout>
-
         </LinearLayout>
 
-    </androidx.appcompat.widget.Toolbar>*/
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

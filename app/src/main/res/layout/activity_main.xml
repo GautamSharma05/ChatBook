@@ -24,7 +24,7 @@
     <com.cooltechworks.views.shimmer.ShimmerRecyclerView
         android:id="@+id/recylerView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="623dp"
         android:layout_marginTop="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
