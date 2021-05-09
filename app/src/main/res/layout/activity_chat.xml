@@ -67,7 +67,7 @@
         </LinearLayout>
 
 
-    </androidx.appcompat.widget.Toolbar>*/
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

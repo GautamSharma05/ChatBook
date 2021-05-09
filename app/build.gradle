@@ -23,12 +23,6 @@ android {
 
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -52,11 +46,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
-    implementation "com.github.pgreze:android-reactions:1.4"
+    implementation 'com.github.pgreze:android-reactions:1.5.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.devlomi:circularstatusview:1.0.1'
     implementation 'com.github.OMARIHAMZA:StoryView:1.0.6-alpha'
-    implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
+    implementation "com.github.sharish:ShimmerRecyclerView:${shimmerrecyclerviewVersion1}"
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
