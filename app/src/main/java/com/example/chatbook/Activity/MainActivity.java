@@ -266,12 +266,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     protected void onPause() {
         String currentId  = FirebaseAuth.getInstance().getUid();
         database.getReference().child("presence").child(currentId).setValue("offline");
         super.onPause();
-}
+}*/
 
     @Override
     public void onBackPressed() {
@@ -285,12 +285,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.Search:
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.Settings:
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show();
-                break;
+
             case R.id.LogOut:
                 signOut();
                 break;
@@ -303,13 +298,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void signOut() {
         FirebaseAuth.getInstance().signOut();
-        if(FirebaseAuth.getInstance().getCurrentUser() == null){
-            Toast.makeText(this, "SignOut Successfully", Toast.LENGTH_SHORT).show();
-
-        }
-        else{
-            Toast.makeText(this, "SignOut not Successfully", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent(MainActivity.this, PhoneNumberActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
     private void onShareClicked() {
 
